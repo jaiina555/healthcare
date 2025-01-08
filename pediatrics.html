@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gyaecology</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <style>
+    .navbar-custom {
+      color: white;
+      background-color: rgb(39, 36, 36);
+      padding: 10px 20px;
+    }
+    .navbar-custom .logo img {
+      height: 40px;
+    }
+    .contact-info {
+      font-size: 14px;
+      display: flex;
+      align-items: left;
+    }
+    .contact-info .icon {
+      display: flex;
+      margin-right: 5px;
+      color: #007bff;
+    }
+    .contact-info img {
+      height: 40px;
+    }
+    .ms-auto {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .btn-sign {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 12px;
+      padding: 8px 16px;
+      line-height: 1;
+      white-space: nowrap;
+      margin-left: 0;
+      text-transform: none;
+    }
+    .navbar-secondary {
+      background-color: cyan;
+      color: aliceblue;
+    }
+    .nav-link {
+      color: aliceblue;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+    .navbar-toggler {
+      border-color: aliceblue;
+      .navbar-toggler-icon {
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpath stroke='rgba%28255, 255, 255, 0.7%29' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+      }
+    }
+    .dropdown-menu {
+      background-color: chartreuse;
+      border: none;
+      .dropdown-item {
+        color: black;
+        &:hover {
+          background-color: blueviolet;
+          color: black;
+        }
+      }
+      .btn-outline-success {
+        color: black;
+        border-color: transparent;
+        &:hover {
+          background-color: blueviolet;
+        }
+      }
+    }
+    .navbar3 {
+      width: 100%;
+      height: 150px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0;
+      position: relative;
+      overflow: hidden;
+
+      .wall-image {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        opacity: 0.5;
+      }
+      h1 {
+        position: relative;
+        z-index: 2;
+        font-size: 40px;
+        font-weight: bold;
+        color: black;
+        text-align: center;
+        margin: 0;
+      }
+    }
+    .container4 {
+      background-color: #f9b3b3;
+      padding: 20px;
+      margin: 20px auto;
+      max-width: 1400px;
+      gap: 20px;
+      border-radius: 10px;
+      box-sizing: border-box;
+    }
+    .content-box {
+      h2 {
+        margin-bottom: 20px;
+        color: black;
+      }
+      p {
+        color: black;
+        line-height: 1.6;
+        text-align: justify;
+      }
+    }
+    .image-box {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      margin-top: 20px;
+
+      img {
+        max-width: 80%;
+        height: auto;
+        border-radius: 5px;
+      }
+
+      p {
+        color: #333;
+        text-align: justify;
+      }
+    }
+    .image-box,
+    .content-box {
+      float: none;
+      position: relative;
+    }
+    footer {
+      background-color: black;
+      height: 300px;
+      padding: 10px 0;
+
+      img {
+        width: 30px;
+        height: 30px;
+      }
+      h5 {
+        color: #ccc;
+      }
+      p {
+        color: #ccc;
+        font-size: 14px;
+        text-align: center;
+      }
+      ul {
+        list-style-type: none;
+        padding: 0;
+      }
+      ul li {
+        margin-bottom: 15px;
+      }
+    }
+    .container2 {
+      display: flex;
+      gap: 50px;
+      text-align: left;
+      width: 100%;
+      flex-direction: column;
+      padding-left: 400px;
+    }
+    .container1 {
+      margin-bottom: 0;
+      margin-top: 10px;
+
+      p {
+        font-size: 14px;
+        font-weight: 700;
+        text-align: center;
+      }
+    }
+    @media (max-width: 1199px) {
+      .navbar-custom {
+        padding: 8px 15px;
+      }
+
+      .navbar-custom .logo img {
+        height: 30px;
+      }
+
+      .contact-info {
+        font-size: 12px;
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .ms-auto {
+        gap: 5px;
+        flex-direction: column;
+      }
+
+      .btn-sign {
+        font-size: 10px;
+        padding: 6px 10px;
+      }
+
+      .navbar-secondary {
+        font-size: 14px;
+        text-align: center;
+      }
+
+      .nav-link {
+        font-size: 14px;
+      }
+
+      .navbar-toggler {
+        border-width: 1px;
+      }
+
+      .dropdown-menu {
+        padding: 10px;
+      }
+
+      .dropdown-item:hover {
+        background-color: blueviolet;
+      }
+
+      .navbar3 {
+        height: 120px;
+      }
+
+      .wall-image {
+        opacity: 0.6;
+      }
+
+      .container4 {
+        padding: 10px;
+        margin: 10px auto;
+        max-width: 95%;
+      }
+
+      .content-box h2 {
+        font-size: 20px;
+      }
+
+      .content-box p {
+        font-size: 14px;
+      }
+
+      .image-box {
+        align-items: center;
+      }
+
+      .image-box img {
+        max-width: 100%;
+      }
+
+      footer {
+        padding: 10px;
+        height: auto;
+      }
+
+      footer h5,
+      footer p {
+        font-size: 12px;
+      }
+
+      .container2 {
+        padding-left: 0;
+        text-align: center;
+        gap: 10px;
+      }
+
+      .container1 {
+        margin: 5px 0;
+      }
+
+      .container1 p {
+        font-size: 12px;
+      }
+    }
+  </style>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-custom">
+      <div class="container">
+        <div class="logo d-flex align-items-center me-3">
+          <img src="./blue col healthcare logo.webp" alt="logo" />
+          <span>Healthcare</span>
+        </div>
+        <div class="contact-info">
+          <div class="d-flex align-items-center me-3">
+            <i class="bi bi-telephone-fill icon"></i>
+            <img src="./phone call image.jpg" alt="phone" />
+            <span>2345456789</span>
+          </div>
+          <div class="d-flex align-items-center me-3">
+            <i class="bi bi-telephone-fill icon"></i>
+            <a
+              href="https://wa.me/916367786565?text=Hi%20there!%20I%20need%20assistance."
+              target="_blank"
+              style="text-decoration: none; color: inherit"
+            >
+              <img
+                src="./whatsapp image.jpg"
+                alt="whatsApp"
+                class="whatsapp-icon"
+              />
+              <span class="ms-2">+91 6367786565</span>
+            </a>
+          </div>
+          <div class="d-flex align-items-center me-3">
+            <i class="bi bi-envelope-fill icon"></i>
+            <span>info@xyz.com</span>
+          </div>
+        </div>
+      </div>
+      <div class="ms-auto">
+        <a href="signin.html" class="btn btn-primary btn-sign">Sign In</a>
+        <a href="signup.html" class="btn btn-primary btn-sign">Sign Up</a>
+      </div>
+    </nav>
+    <nav class="navbar navbar-expand-lg navbar-secondary">
+      <div class="container">
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav me-auto">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="aboutus.html"
+                >Home</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">About Us</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="aboutus.html"
+                id="navbarDropdown"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+                >Departments</a
+              >
+
+              <ul class="dropdown-menu" aria-lebelledby="navbarDropdown">
+                <li>
+                  <a class="dropdown-item" href="index.html">About Us</a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="gynaecology.html"
+                    >Gynaecology Department</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="pediatrics.html"
+                    >Pediatrics Department</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="neurology.html"
+                    >Neurology Department</a
+                  >
+                </li>
+              </ul>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="contactus.html">Contact Us</a>
+            </li>
+          </ul>
+        </div>
+        <form class="d-flex" role="search">
+          <input
+            class="form-control me-2"
+            type="Search"
+            placeholder="Search"
+            aria-label="Search"
+          />
+          <button class="btn btn-outline-success" type="submit">Search</button>
+        </form>
+      </div>
+    </nav>
+    <nav class="navbar3 d-flex align-items-centre p-3 position-relative">
+      <img src="./hospital image.jpg" alt="wall image" class="wall-image" />
+      <h1 class="m-0 position-relative text-centre w-100 text-black">
+        HEALTHCARE
+      </h1>
+    </nav>
+    <div class="container4" style="background-color: #f9b3b3">
+      <div class="row align-items-center flex-md-row-reverse">
+        <div class="col-md-5 content-box order-md-first">
+          <h2>Pediatrics Department</h2>
+          <p>
+            The Pediatrics Department is dedicated to nurturing the health and
+            growth of children from infancy to adolescence. Offering
+            vaccinations, regular health check-ups, and treatment for common
+            illnesses, the department ensures every child's well-being.
+            Specialized care for developmental milestones and chronic conditions
+            like asthma or diabetes is provided by experienced pediatricians.
+            The child-friendly environment and gentle approach make visits
+            stress-free for young patients and their families. Our goal is to
+            support children’s physical and emotional health, ensuring they grow
+            up strong and healthy.
+          </p>
+        </div>
+        <div class="col-md-6 image-box order-md-last text-center">
+          <div class="image-box text-center">
+            <img
+              src="./pediatric specialty care.jpeg"
+              alt="pediatrics Department"
+              class="img-fluid rounded"
+            />
+            <p>
+              A healthcare hospital provides dedicated services through its
+              Pediatrics Department, offering specialized care for infants,
+              children, and adolescents. It includes routine check-ups,
+              vaccinations, growth monitoring, and treatment for illnesses.
+              Pediatricians ensure a child-friendly environment, addressing
+              physical, emotional, and developmental needs while guiding parents
+              on fostering their child's health and well-being.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <footer class="bg-dark text white py-5">
+      <div class="container2">
+        <div class="row">
+          <div class="col-md-6">
+            <h5>Quick Links</h5>
+            <ul class="list-unstyled">
+              <li class="text-white">Feedback</li>
+              <li class="text-white">Help</li>
+              <li class="text-white">Privacy Policy</li>
+            </ul>
+          </div>
+          <div class="col-md-6">
+            <h5>Address Details</h5>
+            <div class="d-flex mb-3">
+              <img
+                src="./location image.jpg"
+                alt="Location"
+                class="me-3"
+                style="width: 30px; height: 30px"
+              />
+              <p class="m-0">56, kharol colony, Udaipur (Rajasthan)</p>
+            </div>
+            <div class="d-flex mb-3">
+              <img
+                src="./email icon.jpg"
+                alt="Email"
+                class="me-3"
+                style="width: 30px; height: 30px"
+              />
+              <p class="m-0">info@xyz.com"></p>
+            </div>
+            <div class="d-flex mb-3">
+              <img
+                src="./phone call image.jpg"
+                alt="Phone"
+                class="me-3"
+                style="width: 30px; height: 30px"
+              />
+              <p class="m-0">2345456789</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="container1 py-4">
+        <p class="mb-2">
+          &copy; 2024 All Services, come first come at Healthcare All rights
+          reserved.
+        </p>
+      </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

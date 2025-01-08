@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Healthcare</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <style>
+      .navbar-custom {
+        display: flex;
+        color: white;
+        background-color: rgb(39, 36, 36);
+        padding: 10px 20px;
+        align-items: center;
+        justify-content: space-between;
+      }
+      .navbar-custom .logo {
+        display: flex;
+        align-items: left;
+      }
+      .navbar-custom .logo img {
+        height: 40px;
+      }
+      .contact-info {
+        font-size: 14px;
+        display: flex;
+        align-items: left;
+      }
+      .contact-info .icon {
+        display: flex;
+        margin-right: 5px;
+        color: #007bff;
+      }
+      .contact-info img {
+        height: 40px;
+      }
+      .navbar-secondary {
+        background-color: cyan;
+        color: aliceblue;
+      }
+      .nav-link {
+        color: aliceblue;
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+      .navbar-toggler {
+        border-color: aliceblue;
+        .navbar-toggler-icon {
+          background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpath stroke='rgba%28255, 255, 255, 0.7%29' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+        }
+      }
+      .dropdown-menu {
+        background-color: chartreuse;
+        border: none;
+        .dropdown-item {
+          color: black;
+          &:hover {
+            background-color: blueviolet;
+            color: black;
+          }
+        }
+        .btn-outline-success {
+          color: black;
+          border-color: transparent;
+          &:hover {
+            background-color: blueviolet;
+          }
+        }
+      }
+      .navbar3 {
+        width: 100%;
+        height: 150px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0;
+        position: relative;
+        overflow: hidden;
+
+        .wall-image {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          opacity: 0.5;
+        }
+        h1 {
+          position: relative;
+          z-index: 2;
+          font-size: 40px;
+          font-weight: bold;
+          color: black;
+          text-align: center;
+          margin: 0;
+        }
+      }
+      .news-events {
+        margin-top: 5px;
+        background-color: #f8f9fa;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+
+        h3 {
+          font-weight: bold;
+          margin-bottom: 1rem;
+          color: #333;
+        }
+        ul {
+          list-style: disc;
+          padding-left: 20px;
+        }
+        p {
+          color: #333;
+          text-align: justify;
+        }
+        li.event {
+          color: rgb(53, 47, 240) !important;
+          font-weight: 800;
+          margin-bottom: 0.5rem;
+        }
+      }
+      .image-box {
+        img {
+          max-width: 80%;
+          height: auto;
+          border-radius: 5px;
+        }
+        p {
+          color: #333;
+          text-align: justify;
+        }
+      }
+      footer {
+        background-color: black;
+        height: 300px;
+        padding: 10px 0;
+
+        img {
+          width: 30px;
+          height: 30px;
+        }
+        h5 {
+          color: #ccc;
+        }
+        p {
+          color: #ccc;
+          font-size: 14px;
+          text-align: center;
+        }
+        ul {
+          list-style-type: none;
+          padding: 0;
+        }
+        ul li {
+          margin-bottom: 15px;
+        }
+      }
+      .container2 {
+        display: flex;
+        gap: 50px;
+        text-align: left;
+        width: 100%;
+        flex-direction: column;
+        padding-left: 400px;
+      }
+      .container1 {
+        margin-bottom: 0;
+        margin-top: 10px;
+        p {
+          font-size: 14px;
+          font-weight: 700;
+          text-align: center;
+        }
+      }
+      @media (max-width: 1199px) {
+        .navbar-custom {
+          padding: 8px 15px;
+        }
+        .navbar-custom .logo img {
+          height: 35px;
+        }
+
+        .contact-info {
+          font-size: 13px;
+          flex-direction: column;
+          align-items: center;
+        }
+
+        .contact-info .icon {
+          margin-right: 0;
+          margin-bottom: 5px;
+        }
+
+        .ms-auto {
+          flex-direction: column;
+          align-items: center;
+          gap: 8px;
+        }
+
+        .navbar-toggler {
+          border-color: aliceblue;
+        }
+
+        .image-box img {
+          max-width: 100%;
+        }
+
+        .container2 {
+          padding-left: 20px;
+          gap: 20px;
+        }
+
+        .profile-section {
+          padding-right: 2rem;
+          margin-top: 20px;
+          margin-left: auto;
+          margin-right: auto;
+        }
+
+        footer {
+          padding: 15px 0;
+          height: auto;
+        }
+        footer img {
+          width: 25px;
+          height: 25px;
+        }
+
+        .news-events {
+          margin-top: 15px;
+          padding: 10px;
+        }
+        .news-events h3 {
+          font-size: 16px;
+        }
+        .news-events ul {
+          padding-left: 10px;
+        }
+        .news-events li.event {
+          font-size: 14px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-custom">
+      <div class="container">
+        <div class="logo d-flex align-items-center me-3">
+          <img src="./blue col healthcare logo.webp" alt="logo" />
+          <span>Healthcare</span>
+        </div>
+        <div class="contact-info">
+          <div class="d-flex align-items-center me-3">
+            <i class="bi bi-telephone-fill icon"></i>
+            <img src="./phone call image.jpg" alt="phone" />
+            <span>2345456789</span>
+          </div>
+          <div class="d-flex align-items-center me-3">
+            <i class="bi bi-telephone-fill icon"></i>
+            <a
+              href="https://wa.me/916367786565?text=Hi%20there!%20I%20need%20assistance."
+              target="_blank"
+              style="text-decoration: none; color: inherit"
+            >
+              <img
+                src="./whatsapp image.jpg"
+                alt="whatsApp"
+                class="whatsapp-icon"
+              />
+              <span class="ms-2">+91 6367786565</span>
+            </a>
+          </div>
+          <div class="d-flex align-items-center me-3">
+            <i class="bi bi-envelope-fill icon"></i>
+            <span>info@xyz.com</span>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <nav class="navbar navbar-expand-lg navbar-secondary">
+      <div class="container">
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav me-auto">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="aboutus.html"
+                >Home</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">About Us</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="index.html"
+                id="navbarDropdown"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+                >Departments</a
+              >
+              <ul class="dropdown-menu" aria-lebelledby="navbarDropdown">
+                <li><a class="dropdown-item" href="aboutus.html">Home</a></li>
+
+                <li>
+                  <a class="dropdown-item" href="gynaecology.html"
+                    >Gynaecology Department</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="pediatrics.html"
+                    >Pediatrics Department</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="neurology.html"
+                    >Neurology Department</a
+                  >
+                </li>
+              </ul>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="contactus.html">Contact Us</a>
+            </li>
+          </ul>
+        </div>
+        <form class="d-flex" role="search">
+          <input
+            class="form-control me-2"
+            type="Search"
+            placeholder="Search"
+            aria-label="Search"
+          />
+          <button class="btn btn-outline-success" type="submit">Search</button>
+        </form>
+      </div>
+    </nav>
+    <nav class="navbar3 d-flex align-items-centre p-3 position-relative">
+      <img src="./hospital image.jpg" alt="wall image" class="wall-image" />
+      <h1 class="m-0 position-relative text-centre w-100 text-black">
+        HEALTHCARE
+      </h1>
+    </nav>
+    <div class="container my-4">
+      <div class="row align-items-center">
+        <div class="col-md-6">
+          <div class="news-events p-4">
+            <h3>News and Events</h3>
+            <ul>
+              <li class="event">Event 1 : Healthcare Awareness Drive</li>
+              <p>
+                Join our Healthcare Awareness Drive this weekend! Discover
+                essential tips on maintaining a healthy lifestyle, participate
+                in free health check-ups, and gain insights from expert doctors.
+                This event aims to educate and empower individuals to prioritize
+                their well-being. Don't miss this opportunity to make health
+                your top priority!
+              </p>
+              <li class="event">Event 2 : Wellness Workshop for All</li>
+              <p>
+                Be part of our Wellness Workshop designed to promote holistic
+                health. Explore interactive sessions on stress management,
+                fitness routines, and nutrition guidance from top healthcare
+                professionals. Engage in activities that inspire a balanced
+                lifestyle and boost mental well-being. Join us to take the first
+                step towards a healthier and happier you!
+              </p>
+              <li class="event">
+                Event 3 : Advanced Healthcare Technology Expo
+              </li>
+              <p>
+                Discover the future of medicine at our Advanced Healthcare
+                Technology Expo. Witness cutting-edge innovations, including AI
+                in diagnostics, robotic surgeries, and telemedicine solutions.
+                Engage with healthcare pioneers, attend live demonstrations, and
+                explore how technology is reshaping patient care. Don't miss
+                this opportunity to stay ahead in the rapidly evolving world of
+                healthcare!
+              </p>
+            </ul>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="image-box text-center">
+            <img
+              src="./hospital-reception front desk.jpg"
+              alt="front-desk"
+              class="img-fluid rounded"
+            />
+            <p>
+              The hospital reception front desk plays a crucial role in
+              healthcare by greeting patients, managing appointments, and
+              directing them to the appropriate departments. It ensures smooth
+              communication between patients and medical staff, providing a
+              welcoming environment and efficient service.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <footer class="bg-dark text white py-5">
+      <div class="container2">
+        <div class="row">
+          <div class="col-md-6">
+            <h5>Quick Links</h5>
+            <ul class="list-unstyled">
+              <li class="text-white">Feedback</li>
+              <li class="text-white">Help</li>
+              <li class="text-white">Privacy Policy</li>
+            </ul>
+          </div>
+          <div class="col-md-6">
+            <h5>Address Details</h5>
+            <div class="d-flex mb-3">
+              <img
+                src="./location image.jpg"
+                alt="Location"
+                class="me-3"
+                style="width: 30px; height: 30px"
+              />
+              <p class="m-0">56, kharol colony, Udaipur (Rajasthan)</p>
+            </div>
+            <div class="d-flex mb-3">
+              <img
+                src="./email icon.jpg"
+                alt="Email"
+                class="me-3"
+                style="width: 30px; height: 30px"
+              />
+              <p class="m-0">info@xyz.com"></p>
+            </div>
+            <div class="d-flex mb-3">
+              <img
+                src="./phone call image.jpg"
+                alt="Phone"
+                class="me-3"
+                style="width: 30px; height: 30px"
+              />
+              <p class="m-0">2345456789</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="container1 py-4">
+        <p class="mb-2">
+          &copy; 2024 All Services, come first come at Healthcare All rights
+          reserved.
+        </p>
+      </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
